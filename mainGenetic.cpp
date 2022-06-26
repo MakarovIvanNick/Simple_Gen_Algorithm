@@ -2,8 +2,9 @@
 #include <iostream>
 #include <ctime>
 #include <vector>
+#include <math.h>
 using namespace std;
-//особь
+//пїЅпїЅпїЅпїЅпїЅ
 class individual
 {
 public:
@@ -11,7 +12,7 @@ public:
 	void show_gene();
 	vector<int> gene;
 };
-//популяция
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 class population
 {
 public:
@@ -37,7 +38,7 @@ int main()
 {
 	srand(time(0));
 	setlocale(LC_ALL, "ru");
-	//создание начальной популяции
+	//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	population first;
 	for (int i = 0; i < 10; i++)
 	{
@@ -54,7 +55,7 @@ int main()
 		first.pop_cross();
 		if (first.condition() == true)
 		{
-			cout << " Последнее поколение " << endl;
+			cout << " The latest generation " << endl;
 			first.show_pop();
 			break;
 		}
@@ -111,7 +112,7 @@ void population::prob_pop()
 {
 	for (int i = 0; i < init_pop.size(); i++)
 	{
-		cout << "Вероятность скрещивания особи " << i << " равна: " << fit_pop[i] / sum_fit() << endl;
+		cout << "The probability of crossing an individual " << i << " equal to: " << fit_pop[i] / sum_fit() << endl;
 		fit_prob.push_back(fit_pop[i] / sum_fit());
 	}
 	//cout << endl << fit_pop.size() << endl;
@@ -121,7 +122,7 @@ void population::fitness_pop()
 {
 	for (int i = 0; i < init_pop.size(); i++)
 	{
-		cout << "Приспособленность особи " << i << " равна: " << fit(init_pop[i].gene[0], init_pop[i].gene[1]) << endl;
+		cout << "Fitness of the individual " << i << " equal to: " << fit(init_pop[i].gene[0], init_pop[i].gene[1]) << endl;
 		fit_pop.push_back(fit(init_pop[i].gene[0], init_pop[i].gene[1]));
 	}
 }
